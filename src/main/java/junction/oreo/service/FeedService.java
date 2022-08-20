@@ -48,11 +48,9 @@ public class FeedService {
     }
 
     private List<FeedList> getAllFeed(Member member, List<Feed> feeds) {
-
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MM.dd HH:mm a");
         return feeds.stream()
                     .map(i -> FeedList.builder()
-                                      .writeDate(i.getWriteDate().format(formatter))
+                                      .writeDate(i.getWriteDate())
                                       .feedId(i.getId())
                                       .text(i.getText())
                                       .isCheck(i.isCheck())

@@ -1,5 +1,6 @@
 package junction.oreo.dto;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 import lombok.AllArgsConstructor;
@@ -20,7 +21,7 @@ public class FeedDto {
         private String name;
         private String imgUrl;
         private Long feedId;
-        private String writeDate;
+        private LocalDateTime writeDate;
         private String text;
         private boolean isCheck;
         private String subject;
