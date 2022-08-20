@@ -23,7 +23,7 @@ public class FeedDto {
         private Long feedId;
         private LocalDateTime writeDate;
         private String text;
-        private boolean isCheck;
+        private boolean status;
         private String subject;
     }
 }

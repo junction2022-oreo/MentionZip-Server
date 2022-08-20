@@ -44,7 +44,7 @@ public class Feed extends BaseEntity {
     @JoinColumn(name = "member_id")
     private Member member;
 
-    private boolean isCheck;
+    private boolean status;
 
     private String subject;
 

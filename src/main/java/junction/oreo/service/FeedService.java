@@ -53,7 +53,7 @@ public class FeedService {
                                       .writeDate(i.getWriteDate())
                                       .feedId(i.getId())
                                       .text(i.getText())
-                                      .isCheck(i.isCheck())
+                                      .status(i.isStatus())
                                       .subject(i.getSubject())
                                       .name(member.getName())
                                       .imgUrl(member.getImgUrl())
@@ -71,7 +71,7 @@ public class FeedService {
         }
 
         Feed feed = feedOtp.get();
-        feed.setCheck(updateFeedDto.isCheck());
+        feed.setStatus(updateFeedDto.isStatus());
     }
 
     @Transactional
@@ -83,13 +83,13 @@ public class FeedService {
 
     private List<FeedList> getTodoList(List<FeedList> feedLists) {
         return feedLists.stream()
-                        .filter(i -> i.isCheck() == false)
+                        .filter(i -> i.isStatus() == false)
                         .collect(Collectors.toList());
     }
 
     private List<FeedList> getDoneList(List<FeedList> feedLists) {
         return feedLists.stream()
-                        .filter(i -> i.isCheck() == true)
+                        .filter(i -> i.isStatus() == true)
                         .collect(Collectors.toList());
     }
 

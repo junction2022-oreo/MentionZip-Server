@@ -74,16 +74,16 @@ public class FeedController {
     @PutMapping
     public CommonResponse updateFeed(@RequestBody UpdateFeedRequest request, Member member) {
         Long feedId = request.getFeedId();
-        boolean isCheck = request.isCheck();
+        boolean status = request.isStatus();
         String mid = member.getMid();
         UpdateFeedDto updateFeedDto = UpdateFeedDto.builder()
                                                    .member(member)
                                                    .feedId(feedId)
-                                                   .isCheck(isCheck)
+                                                   .status(status)
                                                    .build();
 
-        log.info("[Feed] update feed. (mid : {}, feedId : {}, isCheck : {} -> {})",
-                 mid, feedId, !isCheck, isCheck);
+        log.info("[Feed] update feed. (mid : {}, feedId : {}, status : {} -> {})",
+                 mid, feedId, !status, status);
 
         feedService.updateFeed(updateFeedDto);
 

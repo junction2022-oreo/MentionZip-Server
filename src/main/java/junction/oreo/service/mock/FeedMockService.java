@@ -46,7 +46,7 @@ public class FeedMockService {
                           .writeDate(LocalDateTime.now())
                           .text("SLACK 1")
                           .member(member)
-                          .isCheck(true)
+                          .status(true)
                           .subject("iOS App Desing QA")
                           .build();
 
@@ -55,7 +55,7 @@ public class FeedMockService {
                           .writeDate(LocalDateTime.now())
                           .text("SLACK 2")
                           .member(member)
-                          .isCheck(false)
+                          .status(false)
                           .subject("iOS App Desing QA")
                           .build();
 
@@ -64,7 +64,7 @@ public class FeedMockService {
                          .writeDate(LocalDateTime.now())
                          .text("JIRA 1")
                          .member(member)
-                         .isCheck(true)
+                         .status(true)
                          .subject("iOS App Desing QA")
                          .build();
 
@@ -73,7 +73,7 @@ public class FeedMockService {
                          .writeDate(LocalDateTime.now())
                          .text("JIRA 2")
                          .member(member)
-                         .isCheck(false)
+                         .status(false)
                          .subject("iOS App Desing QA")
                          .build();
 

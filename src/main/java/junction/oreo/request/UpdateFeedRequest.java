@@ -13,5 +13,5 @@ import lombok.Setter;
 @NoArgsConstructor
 public class UpdateFeedRequest {
     private Long feedId;
-    private boolean isCheck;
+    private boolean status;
 }

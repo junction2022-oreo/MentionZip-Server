@@ -13,5 +13,5 @@ import lombok.NoArgsConstructor;
 public class UpdateFeedDto {
     private Member member;
     private Long feedId;
-    private boolean isCheck;
+    private boolean status;
 }
