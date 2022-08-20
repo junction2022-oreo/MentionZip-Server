@@ -41,11 +41,6 @@ public class MidResolver implements HandlerMethodArgumentResolver {
     }
 
     private Member findByMid(String mid) {
-        if (mid.equals("9999")) {
-            return Member.builder()
-                         .mid("9999")
-                         .build();
-        }
         Optional<Member> memberOpt = memberRepository.findByMid(mid);
         if (memberOpt.isEmpty()) {
             throw new CustomException(CodeEnum.NOT_IDENTITY_VERIFIED_USER);
