@@ -1,6 +1,6 @@
 package junction.oreo.enums;
 
-public enum ENVIRONMENT {
+public enum EnvironmentType {
     LOCAL,
     PROD
 }

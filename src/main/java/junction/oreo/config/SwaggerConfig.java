@@ -8,7 +8,7 @@ import org.springframework.core.env.ConfigurableEnvironment;
 
 import io.swagger.v3.oas.models.OpenAPI;
 import io.swagger.v3.oas.models.servers.Server;
-import junction.oreo.enums.ENVIRONMENT;
+import junction.oreo.enums.EnvironmentType;
 import lombok.RequiredArgsConstructor;
 
 @Configuration
@@ -25,7 +25,7 @@ public class SwaggerConfig {
 
         // Local 환경
         List<Server> serverList = List.of(localhostServer, server);
-        if (!env.getActiveProfiles()[0].equalsIgnoreCase(ENVIRONMENT.LOCAL.name())) { // Cloud 환경
+        if (!env.getActiveProfiles()[0].equalsIgnoreCase(EnvironmentType.LOCAL.name())) { // Cloud 환경
             serverList = List.of(server, localhostServer);
         }
 
