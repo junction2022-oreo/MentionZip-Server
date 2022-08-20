@@ -8,6 +8,10 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.Parameter;
+import io.swagger.v3.oas.annotations.enums.ParameterIn;
+import io.swagger.v3.oas.annotations.media.Schema;
 import junction.oreo.dto.CreateFeedDto;
 import junction.oreo.dto.FeedDto;
 import junction.oreo.dto.MemberDto;
@@ -18,8 +22,8 @@ import junction.oreo.enums.response.CodeEnum;
 import junction.oreo.request.CreateFeedRequest;
 import junction.oreo.request.UpdateFeedRequest;
 import junction.oreo.response.CommonResponse;
-import junction.oreo.service.mock.FeedMockService;
 import junction.oreo.service.FeedService;
+import junction.oreo.service.mock.FeedMockService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
@@ -32,6 +36,14 @@ public class FeedController {
     private final FeedService feedService;
     private final FeedMockService feedMockService;
 
+    @Operation(summary = "Feed 조회",
+            parameters = {
+                    @Parameter(in = ParameterIn.HEADER,
+                            name = "X-MID",
+                            description = "mid",
+                            required = true,
+                            schema = @Schema(type = "string"))}
+    )
     @GetMapping("/{category}")
     public CommonResponse getFeeds(@PathVariable String category, Member member) {
 
@@ -46,6 +58,14 @@ public class FeedController {
                              .build();
     }
 
+    @Operation(summary = "Feed 수정",
+            parameters = {
+                    @Parameter(in = ParameterIn.HEADER,
+                            name = "X-MID",
+                            description = "mid",
+                            required = true,
+                            schema = @Schema(type = "string"))}
+    )
     @PutMapping
     public CommonResponse updateFeed(@RequestBody UpdateFeedRequest request, Member member) {
         Long feedId = request.getFeedId();
