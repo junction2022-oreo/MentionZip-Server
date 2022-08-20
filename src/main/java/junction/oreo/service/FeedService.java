@@ -47,7 +47,6 @@ public class FeedService {
         return feeds.stream()
                     .map(i -> FeedList.builder()
                                       .writeDate(i.getWriteDate().format(formatter))
-                                      .hashtags(i.getHashtagArrayList())
                                       .feedId(i.getId())
                                       .text(i.getText())
                                       .isCheck(i.isCheck())

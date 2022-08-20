@@ -18,9 +18,8 @@ import junction.oreo.enums.response.CodeEnum;
 import junction.oreo.request.CreateFeedRequest;
 import junction.oreo.request.UpdateFeedRequest;
 import junction.oreo.response.CommonResponse;
-import junction.oreo.service.FeedMockService;
+import junction.oreo.service.mock.FeedMockService;
 import junction.oreo.service.FeedService;
-import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
