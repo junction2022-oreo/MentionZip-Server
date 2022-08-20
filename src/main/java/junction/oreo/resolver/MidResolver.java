@@ -33,7 +33,7 @@ public class MidResolver implements HandlerMethodArgumentResolver {
                                   WebDataBinderFactory binderFactory)
             throws Exception {
 
-        String mid = webRequest.getHeader("mid");
+        String mid = webRequest.getHeader("X-MID");
 
         MDC.put("mid", mid);
 
