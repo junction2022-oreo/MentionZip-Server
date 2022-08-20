@@ -18,7 +18,7 @@ import lombok.extern.slf4j.Slf4j;
 @RequiredArgsConstructor
 public class FeedMockService {
     private final String mockImgUrl =
-            "https://github.com/goodGid/goodGid.github.io/blob/master/assets/img/logo.png";
+            "https://mentionzipstorage.blob.core.windows.net/newcontainer/hana.jpeg";
 
     private final MemberRepository memberRepository;
     private final FeedRepository feedRepository;
