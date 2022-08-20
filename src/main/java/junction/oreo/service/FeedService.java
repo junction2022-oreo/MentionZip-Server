@@ -1,5 +1,7 @@
 package junction.oreo.service;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
 import java.util.Optional;
@@ -30,9 +32,13 @@ public class FeedService {
     private final FeedRepository feedRepository;
 
     @Transactional(readOnly = true)
-    public FeedDto getFeed(MemberDto memberDto, CategoryType categoryType) {
+    public FeedDto getFeed(MemberDto memberDto, CategoryType categoryType,
+                           String startDate, String endDate) {
         Member member = memberDto.getMember();
-        List<Feed> feeds = feedRepository.findByMemberAndCategory(member, categoryType);
+        List<Feed> feeds = feedRepository.findByMemberAndCategoryAndWriteDateIsBetween(
+                member, categoryType,
+                getLocalDatetimeFromString(startDate),
+                getLocalDatetimeFromString(endDate));
 
         List<FeedList> feedLists = getAllFeed(member, feeds);
         return FeedDto.builder()
@@ -87,5 +93,11 @@ public class FeedService {
         return feedLists.stream()
                         .filter(i -> i.isCheck() == true)
                         .collect(Collectors.toList());
+    }
+
+    private LocalDateTime getLocalDatetimeFromString(String yyyyMMdd) {
+        DateTimeFormatter DATEFORMATTER = DateTimeFormatter.ofPattern("yyyyMMdd");
+        LocalDate ld = LocalDate.parse(yyyyMMdd, DATEFORMATTER);
+        return LocalDateTime.of(ld, LocalDateTime.now().toLocalTime());
     }
 }

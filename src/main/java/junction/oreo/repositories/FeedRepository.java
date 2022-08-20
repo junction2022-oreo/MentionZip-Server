@@ -1,5 +1,6 @@
 package junction.oreo.repositories;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -10,5 +11,6 @@ import junction.oreo.enums.CategoryType;
 
 public interface FeedRepository extends JpaRepository<Feed, Long> {
 
-    List<Feed> findByMemberAndCategory(Member member, CategoryType category);
+    List<Feed> findByMemberAndCategoryAndWriteDateIsBetween(Member member, CategoryType category,
+                                                            LocalDateTime startDate, LocalDateTime endDate);
 }

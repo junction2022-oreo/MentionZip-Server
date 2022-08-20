@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import io.swagger.v3.oas.annotations.Operation;
@@ -45,12 +46,16 @@ public class FeedController {
                             schema = @Schema(type = "string"))}
     )
     @GetMapping("/{category}")
-    public CommonResponse getFeeds(@PathVariable String category, Member member) {
-
+    public CommonResponse getFeeds(@PathVariable String category,
+                                   @RequestParam String startDate,
+                                   @RequestParam String endDate,
+                                   Member member) {
         MemberDto memberDto = MemberDto.builder()
                                        .member(member)
                                        .build();
-        FeedDto feedDto = feedService.getFeed(memberDto, CategoryType.valueByName(category.toUpperCase()));
+        FeedDto feedDto = feedService.getFeed(memberDto,
+                                              CategoryType.valueByName(category.toUpperCase()),
+                                              startDate, endDate);
 
         return CommonResponse.builder()
                              .returnCode(CodeEnum.SUCCESS.getCode())
