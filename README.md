@@ -13,3 +13,5 @@
 ## ScreenShot
 
 ![](https://github.com/junction2022-oreo/MentionZip-Docs/blob/main/ScreenShot_1.png)
+
+![](https://github.com/junction2022-oreo/MentionZip-Docs/blob/main/ScreenShot_2.png)
