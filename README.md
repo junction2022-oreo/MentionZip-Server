@@ -9,3 +9,7 @@
 * Vision: It will reduce workload by automatically integrated all tools and minimizing communication costs by not missing all mentioned tasks.
 
 * Main technique: Azure, SSL + Nginx + Https, Java + Spring Boot, Swagger
+
+## ScreenShot
+
+![](https://github.com/junction2022-oreo/MentionZip-Docs/blob/main/ScreenShot_1.png)
