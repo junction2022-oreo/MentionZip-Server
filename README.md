@@ -1,4 +1,19 @@
-## Project Summary
+## Info
+
+* [**JUNCTION ASIA Hackathon**](https://asia.hackjunction.com/ko)
+
+* [220819(Fri) : 2022 JUNCTION ASIA - Day 1](https://www.youtube.com/watch?v=vrysWXKG5d4)
+
+* [220820(Sat) : 2022 JUNCTION ASIA - Day 2](https://www.youtube.com/watch?v=lbZSITxlAaE)
+
+* [220821(Sun) : 2022 JUNCTION ASIA - Day 3](https://www.youtube.com/watch?v=yjUZkDtL1sQ)
+
+* Speech PDF : [Here](https://github.com/junction2022-oreo/MentionZip-Docs/blob/main/MentionZip.pdf)
+
+
+
+
+## Summary
 
 * Target users: The target users will be anyone who need to co-work. In the workplace, it is necessary to use various tools and communicate with other colleagues.
 
