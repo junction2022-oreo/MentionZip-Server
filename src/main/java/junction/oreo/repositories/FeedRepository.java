@@ -11,6 +11,6 @@ import junction.oreo.enums.CategoryType;
 
 public interface FeedRepository extends JpaRepository<Feed, Long> {
 
-    List<Feed> findByMemberAndCategoryAndWriteDateIsBetween(Member member, CategoryType category,
+    List<Feed> findByHostIdAndCategoryAndWriteDateIsBetween(Long hostId, CategoryType category,
                                                             LocalDateTime startDate, LocalDateTime endDate);
 }

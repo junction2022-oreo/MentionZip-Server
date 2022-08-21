@@ -44,6 +44,8 @@ public class Feed extends BaseEntity {
     @JoinColumn(name = "member_id")
     private Member member;
 
+    private Long hostId;
+
     private boolean status;
 
     private String subject;

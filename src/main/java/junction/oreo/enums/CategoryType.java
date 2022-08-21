@@ -3,6 +3,7 @@ package junction.oreo.enums;
 public enum CategoryType {
     SLACK("SLACK"),
     JIRA("JIRA"),
+    OUTLOOK("OUTLOOK"),
     ;
 
     private String type;

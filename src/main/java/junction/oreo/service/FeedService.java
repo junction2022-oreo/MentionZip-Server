@@ -35,8 +35,8 @@ public class FeedService {
     public FeedDto getFeed(MemberDto memberDto, CategoryType categoryType,
                            String startDate, String endDate) {
         Member member = memberDto.getMember();
-        List<Feed> feeds = feedRepository.findByMemberAndCategoryAndWriteDateIsBetween(
-                member, categoryType,
+        List<Feed> feeds = feedRepository.findByHostIdAndCategoryAndWriteDateIsBetween(
+                member.getId(), categoryType,
                 getLocalDatetimeFromString(startDate),
                 getLocalDatetimeFromString(endDate));
 
@@ -55,8 +55,8 @@ public class FeedService {
                                       .text(i.getText())
                                       .status(i.isStatus())
                                       .subject(i.getSubject())
-                                      .name(member.getName())
-                                      .imgUrl(member.getImgUrl())
+                                      .name(i.getMember().getName())
+                                      .imgUrl(i.getMember().getImgUrl())
                                       .build()
                     )
                     .collect(Collectors.toList());
